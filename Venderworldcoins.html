@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es"> 
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VENTA DE WORLDCOINS</title>
+    <link rel="shortcut icon" href="https://worldcoin.org/icons/logo-small.svg" type="image/x-icon">
+   </head>
+  
+     
+  
+  <style>
+        /* Estilos CSS */
+        body {
+            font-family: sans-serif;
+            background-color: #c50404;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .address-container {
+            background-color: #ca1c1c;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .address-container p {
+            font-size: 18px;
+            margin: 0;
+            user-select: all;
+            cursor: default;
+        }
+
+        .copy-button {
+            background-color: #385677;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #ffffff;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fa0c0c;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #007BFF;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            ;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #ffffff;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #007BFF;
+        }
+
+        label {
+          display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #f1eaea;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #31913e;
+            border-radius: 3px;
+        }
+
+        input[type="text"].disabled {
+            background-color: #f8f8f8;
+            color: #ffffff;
+            cursor: not-allowed;
+        }
+
+        .copy-address {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .hidden-input {
+            display: none;
+        }
+
+        button[type="button"],
+        button[type="submit"] {
+            background-color: #224972;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        button[type="button"]:hover,
+        button[type="submit"]:hover {
+            background-color: #40854a;
+        }
+
+        footer {
+        background-color: #333;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        }
+
+
+        footer p {
+            margin: 0;
+        }
+
+  </style>
+   
+   <body background="https://i.postimg.cc/1XNB9C36/IMG-20231130-141307.jpg" style slot ="height: auto; width: auto;">
+
+   <script>
+     document.addEventListener("DOMContentLoaded", function () {
+     const cantidadWorldcoin = document.getElementById("cantidad_worldcoin");
+
+     cantidadWorldcoin.addEventListener("input", function () {
+        // Obtener el valor actual del campo de entrada
+        let valor = cantidadWorldcoin.value;
+
+        // Eliminar caracteres no permitidos, excepto números, comas y puntos
+        valor = valor.replace(/[^0-9,./]/g, "");
+
+        // Evitar que haya más de un punto decimal o coma
+        valor = valor.replace(/[.,](?=.*[.,])/g, "");
+
+        // Establecer el valor limpio en el campo de entrada
+        cantidadWorldcoin.value = valor;
+     });
+     });
+ </script>
+    <link id="dynamic-style" rel="stylesheet" charset="utf-8" media="all" type="text/css" href="chrome-extension://lgbjhdkjmpgjgcbcdlhkokkckpjmedgc/inject/comm.css">
+     <script type="text/javascript" src="chrome-extension://lgbjhdkjmpgjgcbcdlhkokkckpjmedgc/inject/comm.js"></script>
+    git
+
+
+
+   <header>
+  
+   <main>
+     <section>
+        <h2>Transacciona tus WorldCoins a Pesos Argentinos.</h2>
+      <form id="solicitudForm" method="POST" action="confirmacion.php">
+         <label for="Total_de_Worldcoin">Total de Worldcoin (Introducir monto a cambiar WLD):</label>
+         <input type="text" id="cantidad_worldcoin" name="cantidad_worldcoin" maxlength="10" required>
+        <p id="resultado"></p>
+          <!-- Agrega un campo oculto para almacenar el resultado -->
+         <input type="hidden" id="resultado_hidden" name="resultado_hidden">
+        <label for="Datos_bancarios"> Envio del dinero: CVU, CBU, ALIAS (Cuenta bancaria donde recibiras ARS):</label>
+          <input type="text" id="cvu" name="cvu" minlength="3" required>
+          <button type="submit"  id="buttonTransaccion" class ><a href="http://127.0.0.1:5500/worldcoin.html" style="background-color: forestgreen; color: rgb(248, 250, 248);">Recibir Pago</a></button>
+      </form>
+      
+      <script>
+             // Obtén una referencia al campo de entrada y al elemento donde mostrar el resultado.
+             var cantidadInput = document.getElementById("cantidad_worldcoin");
+             var resultadoElement = document.getElementById("resultado");
+     
+             // Agrega un evento 'input' al campo de entrada.
+       // ...
+     
+      cantidadInput.addEventListener("input", function() {
+         // Obtiene el valor del campo de entrada y lo convierte a un número.
+         var cantidad = parseFloat(cantidadInput.value);
+     
+         // Verifica si la entrada es un número válido.
+         if (!isNaN(cantidad)) {
+             // Realiza la multiplicación por 1505 y muestra el resultado en el elemento de resultado con formato de miles.
+             var resultado = cantidad * 2115;
+             var resultadoFormateado = resultado.toLocaleString("es-AR", { style: "currency", currency: "ARS" });
+             resultadoElement.textContent = "Recibirás " + resultadoFormateado + " Pesos ARS";
+         } else {
+             // Si la entrada no es un número válido, muestra un mensaje de error.
+             resultadoElement.textContent = "Entrada no válida";
+         }
+      });
+     
+      // ...
+      </script>
+      <script>
+         document.addEventListener("DOMContentLoaded", function () {
+             var resultadoElement = document.getElementById("resultado");
+             var resultadoHiddenElement = document.getElementById("resultado_hidden");
+             var formulario = document.getElementById("solicitudForm");
+     
+             formulario.addEventListener("submit", function (event) {
+                 // Copia el contenido del elemento "resultado" al campo oculto "resultado_hidden"
+                 resultadoHiddenElement.value = resultadoElement.innerText;
+             });
+         });
+       </script>
+     </section>
+   </main>
+   
+   <main>
+   <section id="contacto"></section>
+     <h2>Información de Contacto</h2>
+       <p>
+      Si tenes un error o consulta, podés comunicarte con nosotros a traves de Instagram.
+       </p>
+       <p>
+       <a href="https://www.instagram.com/comproworldcoin.ok/"> <button type="button">@comproworldcoin.ok</button>
+       </a>
+      </p>
+    <section>
+
+   </main>
+
+    <footer>
+    <p>@comproworldcoin.ok Todos los derechos reservados.</p>
+    </footer>
+ 
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const habilitarIdTransaccionButton = document.getElementById("habilitarIdTransaccion");
+    const idTransaccionInput = document.getElementById("idTransaccionInput");
+    const buttonTransaccion = document.getElementById("buttonTransaccion");
+    const direccionPago = document.getElementById("direccion_pago");
+    const cantidadWorldcoin = document.getElementById("cantidad_worldcoin");
+    const cvu = document.getElementById("cvu");
+
+    habilitarIdTransaccionButton.addEventListener("click", function () {
+        // Verificar si los campos anteriores están rellenos
+        if (direccionPago.value && cantidadWorldcoin.value && cvu.value) {
+            // Si todos los campos están rellenos, mostrar los elementos
+            idTransaccionInput.classList.remove("hidden-input");
+            buttonTransaccion.classList.remove("hidden-input");
+
+            // Deshabilitar los campos y agregar la clase "disabled"
+            direccionPago.setAttribute("readonly", true);
+            direccionPago.classList.add("disabled");
+            cantidadWorldcoin.setAttribute("readonly", true);
+            cantidadWorldcoin.classList.add("disabled"); // Agregar la clase "disabled" aquí
+            cvu.setAttribute("readonly", true);
+            cvu.classList.add("disabled");
+        } else {
+            // Si falta algún campo, mostrar un mensaje de error o realizar alguna otra acción
+            alert("Por favor, completa todos los campos antes de continuar.");
+        }
+    });
+ });
+ </script>
+ <script>
+        // Obtén una referencia al campo de entrada y al elemento donde mostrar el resultado.
+        var cantidadInput = document.getElementById("cantidad_worldcoin");
+        var resultadoElement = document.getElementById("resultado");
+
+        // Agrega un evento 'input' al campo de entrada.
+  // ...
+
+ cantidadInput.addEventListener("input", function() {
+    // Obtiene el valor del campo de entrada y lo convierte a un número.
+    var cantidad = parseFloat(cantidadInput.value);
+
+    // Verifica si la entrada es un número válido.
+    if (!isNaN(cantidad)) {
+        // Realiza la multiplicación por 1505 y muestra el resultado en el elemento de resultado con formato de miles.
+        var resultado = cantidad * 2115;
+        var resultadoFormateado = resultado.toLocaleString("es-AR", { style: "currency", currency: "ARS" });
+        resultadoElement.textContent = "Recibirás " + resultadoFormateado + " Pesos ARS";
+    } else {
+        // Si la entrada no es un número válido, muestra un mensaje de error.
+        resultadoElement.textContent = "Entrada no válida";
+    }
+ });
+
+ // ...
+ </script>
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var resultadoElement = document.getElementById("resultado");
+        var resultadoHiddenElement = document.getElementById("resultado_hidden");
+        var formulario = document.getElementById("solicitudForm");
+
+        formulario.addEventListener("submit", function (event) {
+            // Copia el contenido del elemento "resultado" al campo oculto "resultado_hidden"
+            resultadoHiddenElement.value = resultadoElement.innerText;
+        });
+    });
+  </script>
+ </body>
+</html>

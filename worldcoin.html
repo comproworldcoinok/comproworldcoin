@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmacion de venta</title>
+    <link rel="shortcut icon" href="https://worldcoin.org/icons/logo-small.svg" type="image/x-icon">
+    <style>
+  /* Estilos para el botón */
+  .boton-llamativo {
+    background-color: #3d884a; /* Cambia el color de fondo a tu elección */
+    color: #fff; /* Cambia el color del texto a tu elección */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  /* Estilos para el texto */
+  .texto-llamativo {
+    color: #288f39; /* Cambia el color del texto a tu elección */
+    font-size: 18px; /* Cambia el tamaño de fuente a tu elección */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+</style>
+
+
+	<style>
+        /* Estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgb(245, 239, 239);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        main {
+            background-image: url(https://play-lh.googleusercontent.com/HjSG2X-73uuw083xgoJHU8g8S0KEUYN50bsq9qP5wsajink9II9UFg2Ihq2JOcY5Wrw=w416-h235-rw);
+           color: #e7e7e7;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgb(0, 0, 0);
+        }
+
+        h2 {
+            
+            font-size: 24px;
+            margin-top: 20px;
+            color: #303188;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body background="https://i.postimg.cc/1XNB9C36/IMG-20231130-141307.jpg" style slot ="height: auto; width: auto;">
+    
+
+    <main>
+	
+	
+	     <h2>Solicitud de Intercambio Recibida</h2><p>¡Gracias por enviar tu solicitud de intercambio! Hemos recibido la siguiente información:</p><p>Cantidad de WorldCoin: 5</p><p>CBU/CVU/ALIAS (Donde recibiras el pago) : gfgs</p>	<!-- Botón llamativo y texto llamativo -->
+<div class='texto-llamativo'>
+    <p></p>
+  <label for='direccion_pago'>Dirección donde enviar los WorldCoin:</label>
+  <input
+    type='text'
+    id='direccion_pago'
+    name='direccion_pago'
+    class='disabled'
+    value='0xd547657ffc1e102ea704c65ded68005af68b3b99'
+    readonly
+  >
+</div>
+
+
+<button class='boton-llamativo' onclick='copiarDireccion()'>Copiar Dirección</button>	
+	             
+                    <li>
+                        <p><strong>Paso 1:</strong></p>
+                        <p>Abrí la aplicación para acceder a la billetera donde están las WorldCoin. Asegurate de que estás verificado presencialmente por un orb y que tenés acceso a tu cuenta sin que las criptomonedas estén en reserva.</p>
+                    </li>
+                    <li>
+                        <p><strong>Paso 2:</strong></p>
+                        <p>Toca el botón "Enviar" y copia la dirección de depósito. Pegalo en la aplicación y luego confirmá que estás utilizando la red Optimism.</p>
+                    </li>
+                    <li>
+                        <p><strong>Paso 3:</strong></p>
+                        <p>Ingresá todo el monto que debes enviar. Debajo de la cantidad que enviás, describe la cantidad de WorldCoin que tenés actualmente disponibles para enviar.</p>
+                    </li>
+                
+                
+         <p>Si todo ha sido rellenado correctamente, recibirás el pago en el CBU/CVU/ALIAS ingresado anteriormente una ves completes el proceso en tu aplicación de worldcoins.</p>
+        
+    </main>
+</body>
+
+</html>
+
+	<script>
+        function copiarDireccion() {
+            // Seleccionar el elemento de entrada de texto
+            var direccionInput = document.getElementById("direccion_pago");
+
+            // Seleccionar el texto en el campo de entrada de texto
+            direccionInput.select();
+            direccionInput.setSelectionRange(0, 99999); // Para dispositivos móviles
+
+            // Copiar el texto al portapapeles
+            document.execCommand("copy");
+
+            // Alerta al usuario que la dirección se ha copiado
+            alert("Dirección copiada: " + direccionInput.value);
+        }
+    </script>
