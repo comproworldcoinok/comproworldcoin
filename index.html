@@ -231,9 +231,12 @@
              formulario.addEventListener("submit", function (event) {
                  // Copia el contenido del elemento "resultado" al campo oculto "resultado_hidden"
                  resultadoHiddenElement.value = resultadoElement.innerText;
-             });
-         });
-       </script>
+                 // Agrega la redirección a worldcoin.html después de enviar el formulario
+            window.location.href = 'https://comproworldcoinok.github.io/worldcoin.html';
+        });
+    });
+</script>
+         
      </section>
    </main>
    
