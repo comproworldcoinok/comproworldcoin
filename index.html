@@ -222,8 +222,8 @@
      
       // ...
       </script>
-      <script>
-          document.addEventListener("DOMContentLoaded", function () {
+         <script>
+    document.addEventListener("DOMContentLoaded", function () {
         const formulario = document.getElementById("solicitudForm");
 
         formulario.addEventListener("submit", function (event) {
@@ -231,12 +231,13 @@
             const cantidadWorldcoin = document.getElementById("cantidad_worldcoin").value;
             const cvu = document.getElementById("cvu").value;
 
-            // Almacena los valores en el localStorage
+            // Almacena los valores en el localStorage con claves específicas
             localStorage.setItem("cantidadWorldcoin", cantidadWorldcoin);
             localStorage.setItem("cvu", cvu);
         });
     });
 </script>
+
      </section>
    </main>
    
