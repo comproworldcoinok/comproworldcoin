@@ -222,7 +222,7 @@
      
       // ...
       </script>
-         <script>
+        <script>
     document.addEventListener("DOMContentLoaded", function () {
         const formulario = document.getElementById("solicitudForm");
 
@@ -231,12 +231,15 @@
             const cantidadWorldcoin = document.getElementById("cantidad_worldcoin").value;
             const cvu = document.getElementById("cvu").value;
 
-            // Almacena los valores en el localStorage con claves específicas
-            localStorage.setItem("cantidadWorldcoin", cantidadWorldcoin);
-            localStorage.setItem("cvu", cvu);
+            // Redirige a la página de confirmación con los parámetros en la URL
+            window.location.href = `confirmacion.html?cantidad=${cantidadWorldcoin}&cvu=${cvu}`;
+            
+            // Previene el comportamiento predeterminado del formulario (envío directo)
+            event.preventDefault();
         });
     });
 </script>
+
 
      </section>
    </main>
