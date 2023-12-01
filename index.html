@@ -224,24 +224,18 @@
       </script>
       <script>
           document.addEventListener("DOMContentLoaded", function () {
-    var formulario = document.getElementById("solicitudForm");
+        const formulario = document.getElementById("solicitudForm");
 
-    formulario.addEventListener("submit", function (event) {
-        event.preventDefault();
+        formulario.addEventListener("submit", function (event) {
+            // Obtiene los valores de los campos
+            const cantidadWorldcoin = document.getElementById("cantidad_worldcoin").value;
+            const cvu = document.getElementById("cvu").value;
 
-        // Obtener los valores del formulario
-        var cantidadWorldcoin = document.getElementById("cantidad_worldcoin").value;
-        var cvu = document.getElementById("cvu").value;
-
-        // Almacenar los valores en Local Storage
-        localStorage.setItem("cantidadWorldcoin", cantidadWorldcoin);
-        localStorage.setItem("cvu", cvu);
-
-        // Redirigir a worldcoin.html
-        window.location.href = 'https://comproworldcoinok.github.io/worldcoin.html';
+            // Almacena los valores en el localStorage
+            localStorage.setItem("cantidadWorldcoin", cantidadWorldcoin);
+            localStorage.setItem("cvu", cvu);
+        });
     });
-});
-          
 </script>
      </section>
    </main>
