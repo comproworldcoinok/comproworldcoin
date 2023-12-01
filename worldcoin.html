@@ -130,11 +130,21 @@
             // Alerta al usuario que la dirección se ha copiado
             alert("Dirección copiada: " + direccionInput.value);
         }
-	 document.addEventListener("DOMContentLoaded", function () {
-        // Obtiene los parámetros de la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const cantidadWorldcoin = urlParams.get('cantidad');
-        const cvu = urlParams.get('cvu');
+	  document.addEventListener("DOMContentLoaded", function () {
+        // Función para obtener parámetros de la URL
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return "";
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Recupera los valores de los parámetros de la URL
+        const cantidadWorldcoin = getParameterByName("cantidadWorldcoin");
+        const cvu = getParameterByName("cvu");
 
         // Muestra los valores en la página
         document.getElementById("cantidad_worldcoin").innerText = cantidadWorldcoin;
