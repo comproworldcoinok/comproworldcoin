@@ -131,14 +131,16 @@
             alert("Dirección copiada: " + direccionInput.value);
         }
 	 document.addEventListener("DOMContentLoaded", function () {
-        // Recupera los valores de Local Storage
-        const cantidadWorldcoin = localStorage.getItem("cantidadWorldcoin");
-        const cvu = localStorage.getItem("cvu");
+        // Obtiene los parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const cantidadWorldcoin = urlParams.get('cantidad');
+        const cvu = urlParams.get('cvu');
 
         // Muestra los valores en la página
         document.getElementById("cantidad_worldcoin").innerText = cantidadWorldcoin;
         document.getElementById("cvu").innerText = cvu;
     });
+		
     </script>
 </body>
 
