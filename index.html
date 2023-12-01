@@ -231,10 +231,13 @@
             const cantidadWorldcoin = document.getElementById("cantidad_worldcoin").value;
             const cvu = document.getElementById("cvu").value;
 
-            // Redirige a la página de confirmación con los parámetros en la URL
-            window.location.href = `confirmacion.html?cantidad=${cantidadWorldcoin}&cvu=${cvu}`;
-            
-            // Previene el comportamiento predeterminado del formulario (envío directo)
+            // Construye la URL con los parámetros
+            const url = `worldcoin.html?cantidadWorldcoin=${cantidadWorldcoin}&cvu=${cvu}`;
+
+            // Redirige a la página worldcoin.html con los parámetros
+            window.location.href = url;
+
+            // Evita que el formulario se envíe normalmente
             event.preventDefault();
         });
     });
