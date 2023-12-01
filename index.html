@@ -226,20 +226,20 @@
     document.addEventListener("DOMContentLoaded", function () {
         const formulario = document.getElementById("solicitudForm");
 
-        formulario.addEventListener("submit", function (event) {
-            // Obtiene los valores de los campos
-            const cantidadWorldcoin = document.getElementById("cantidad_worldcoin").value;
-            const cvu = document.getElementById("cvu").value;
+       formulario.addEventListener("submit", function (event) {
+    // Obtiene los valores de los campos
+    const cantidadWorldcoin = document.getElementById("cantidad_worldcoin").value;
+    const cvu = document.getElementById("cvu").value;
 
-            // Construye la URL con los parámetros
-            const url = `worldcoin.html?cantidadWorldcoin=${cantidadWorldcoin}&cvu=${cvu}`;
+    // Construye la URL con los parámetros
+    const url = `worldcoin.html?cantidadWorldcoin=${cantidadWorldcoin}&cvu=${cvu}`;
 
-            // Redirige a la página worldcoin.html con los parámetros
-            window.location.href = url;
+    // Redirige a la página worldcoin.html con los parámetros
+    window.location.href = url;
 
-            // Evita que el formulario se envíe normalmente
-            event.preventDefault();
-        });
+    // Evita que el formulario se envíe normalmente
+    event.preventDefault();
+});
     });
 </script>
 
