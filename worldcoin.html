@@ -131,25 +131,39 @@
             alert("Dirección copiada: " + direccionInput.value);
         }
 	 document.addEventListener("DOMContentLoaded", function () {
-            // Función para obtener parámetros de la URL
-            function getParameterByName(name, url) {
-                if (!url) url = window.location.href;
-                name = name.replace(/[\[\]]/g, "\\$&");
-                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                    results = regex.exec(url);
-                if (!results) return null;
-                if (!results[2]) return "";
-                return decodeURIComponent(results[2].replace(/\+/g, " "));
-            }
+        console.log("Script cargado");
 
-            // Recupera los valores de los parámetros de la URL
-            const cantidadWorldcoin = getParameterByName("cantidadWorldcoin");
-            const cvu = getParameterByName("cvu");
+        // Función para obtener parámetros de la URL
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return "";
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
 
-            // Muestra los valores en la página
-            document.getElementById("cantidad_worldcoin").innerText = cantidadWorldcoin;
-            document.getElementById("cvu").innerText = cvu;
-        });
+        // Recupera los valores de los parámetros de la URL
+        const cantidadWorldcoin = getParameterByName("cantidadWorldcoin");
+        const cvu = getParameterByName("cvu");
+
+        console.log("Cantidad de WorldCoin:", cantidadWorldcoin);
+        console.log("CBU/CVU/ALIAS:", cvu);
+
+        // Muestra los valores en la página
+        const cantidadElement = document.getElementById("cantidad_worldcoin");
+        const cvuElement = document.getElementById("cvu");
+
+        console.log("Elementos encontrados:", cantidadElement, cvuElement);
+
+        if (cantidadElement && cvuElement) {
+            cantidadElement.innerText = cantidadWorldcoin;
+            cvuElement.innerText = cvu;
+        } else {
+            console.error("No se encontraron elementos en la página.");
+        }
+    });
     </script>
 </body>
 </html>
