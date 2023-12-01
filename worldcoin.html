@@ -130,4 +130,17 @@
             // Alerta al usuario que la dirección se ha copiado
             alert("Dirección copiada: " + direccionInput.value);
         }
+		
+	document.addEventListener("DOMContentLoaded", function () {
+        // Recuperar los valores de Local Storage
+        var cantidadWorldcoin = localStorage.getItem("cantidadWorldcoin");
+        var cvu = localStorage.getItem("cvu");
+
+        // Mostrar los valores en la página
+        document.getElementById("cantidad_worldcoin").innerText = cantidadWorldcoin;
+        document.getElementById("cvu").innerText = cvu;
+    });
     </script>
+</body>
+
+</html>
